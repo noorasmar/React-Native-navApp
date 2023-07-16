@@ -6,34 +6,30 @@
  */
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import CategoryScreen from './screens/CategoryScreen';
-import MealsScreen from './screens/MealsScreen';
+import { HomeScreen, WelcomeScreen } from './screens'
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const Stack = createStackNavigator();
+
+const queryClient = new QueryClient();
 
 function App(): JSX.Element {
   return (
     <>
-      <StatusBar barStyle='dark-content' backgroundColor='#fff'/>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name='CategoryScreen' component={CategoryScreen}/>
-          <Stack.Screen name='MealsScreen' component={MealsScreen}/>
-        </Stack.Navigator>
-      </NavigationContainer>
+      <QueryClientProvider client={queryClient}>
+        <StatusBar barStyle='dark-content' backgroundColor='#fff' />
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name='WelcomeScreen' component={WelcomeScreen} />
+            <Stack.Screen name='HomeScreen' component={HomeScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </QueryClientProvider>
     </>
   );
 }
 
 export default App;
-
-const styles = StyleSheet.create({
-  container:{
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
