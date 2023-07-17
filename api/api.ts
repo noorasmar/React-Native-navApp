@@ -14,7 +14,7 @@ export function createProduct(newItem: Product) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(newItem),
-    }).then((response) => response.json());
+    });
 }
 
 export function updateProduct(newItem: Product) {
@@ -24,11 +24,11 @@ export function updateProduct(newItem: Product) {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(newItem),
-    }).then((response) => response.json());
+    });
 }
 
 export function deleteProduct(newItem: Product) {
     return fetch(product + newItem.id, {
         method: "DELETE",
-    }).then((response) => response.json());
+    });
 }

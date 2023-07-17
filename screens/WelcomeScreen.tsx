@@ -7,13 +7,13 @@ export function WelcomeScreen({ navigation }: any): JSX.Element {
                 Welcome Screen
             </Text>
             <Button
-                title="Home"
+                title="Fetch Product"
                 onPress={() =>
                     navigation.navigate('HomeScreen')
                 }
             />
             <Button
-                title="Add"
+                title="Mutation"
                 onPress={() =>
                     navigation.navigate('AddScreen')
                 }

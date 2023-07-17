@@ -9,7 +9,7 @@ export function AddScreen(): JSX.Element {
     const remove = useMutation(deleteProduct)
 
     const handleAddPress = () => {
-        const newItem: Product = { id: 1, title: "dadas", price: 0, category: "" }
+        const newItem: Product = { id: 1, title: "old Title", price: 0, category: "" }
         add.mutate(newItem);
     };
     const handleUpdatePress = () => {
@@ -17,7 +17,7 @@ export function AddScreen(): JSX.Element {
         update.mutate(newItem);
     };
     const handleDeletePress = () => {
-        const newItem: Product = { id: 10, title: "dadas", price: 0, category: "" }
+        const newItem: Product = { id: 10, title: "new Title", price: 0, category: "" }
         remove.mutate(newItem);
     };
 

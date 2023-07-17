@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 import {fetchProduct} from '../api/api'
 
 export function HomeScreen(): JSX.Element {
-    const { data, isLoading, isError, error } = useQuery<Product[]>('product', fetchProduct);
+    const { data, isLoading, isError, error } = useQuery<Product[] | null>('product', fetchProduct);
 
     if (isLoading || !data) {
         return <Text>Loading...</Text>;
