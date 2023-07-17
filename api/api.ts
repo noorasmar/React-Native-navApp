@@ -7,23 +7,23 @@ export async function fetchProduct() {
     return data;
 }
 
-export function createProduct(newItem: Product) {
+export function createProduct(item: Product) {
     return fetch(productAPI, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(newItem),
+        body: JSON.stringify(item),
     });
 }
 
-export function updateProduct(newItem: Product) {
-    return fetch(productAPI + newItem.id, {
+export function updateProduct(item: Product) {
+    return fetch(productAPI + item.id, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(newItem),
+        body: JSON.stringify(item),
     });
 }
 
