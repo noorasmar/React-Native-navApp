@@ -1,14 +1,14 @@
-import { product } from './API_URL';
+import { productAPI } from './API_URL';
 import { Product } from '../interfaces/Product';
 
 export async function fetchProduct() {
-    const response = await fetch(product);
+    const response = await fetch(productAPI);
     const data = await response.json();
     return data;
 }
 
 export function createProduct(newItem: Product) {
-    return fetch(product, {
+    return fetch(productAPI, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ export function createProduct(newItem: Product) {
 }
 
 export function updateProduct(newItem: Product) {
-    return fetch(product + newItem.id, {
+    return fetch(productAPI + newItem.id, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -28,7 +28,7 @@ export function updateProduct(newItem: Product) {
 }
 
 export function deleteProduct(id: Number) {
-    return fetch(product + id, {
+    return fetch(productAPI + id, {
         method: "DELETE",
     });
 }
