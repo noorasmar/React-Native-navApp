@@ -27,8 +27,8 @@ export function updateProduct(newItem: Product) {
     });
 }
 
-export function deleteProduct(newItem: Product) {
-    return fetch(product + newItem.id, {
+export function deleteProduct(id: Number) {
+    return fetch(product + id, {
         method: "DELETE",
     });
 }
