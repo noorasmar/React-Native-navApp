@@ -12,6 +12,12 @@ export function WelcomeScreen({ navigation }: any): JSX.Element {
                     navigation.navigate('HomeScreen')
                 }
             />
+            <Button
+                title="Add"
+                onPress={() =>
+                    navigation.navigate('AddScreen')
+                }
+            />
         </View>
     );
 }
@@ -22,6 +28,7 @@ const styles = StyleSheet.create({
         padding: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'blue'
+        backgroundColor: 'blue',
+        gap: 10
     }
 })

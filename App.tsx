@@ -9,7 +9,7 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { HomeScreen, WelcomeScreen } from './screens'
+import { HomeScreen, WelcomeScreen, AddScreen } from './screens'
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 const Stack = createStackNavigator();
@@ -25,6 +25,7 @@ function App(): JSX.Element {
           <Stack.Navigator>
             <Stack.Screen name='WelcomeScreen' component={WelcomeScreen} />
             <Stack.Screen name='HomeScreen' component={HomeScreen} />
+            <Stack.Screen name='AddScreen' component={AddScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </QueryClientProvider>
