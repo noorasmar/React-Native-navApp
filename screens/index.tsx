@@ -1,3 +1,2 @@
-export {HomeScreen} from './HomeScreen'
-export {WelcomeScreen} from './WelcomeScreen'
-export { AddScreen } from './AddScreen';
+export { WelcomeScreen } from './WelcomeScreen'
+export { ProductScreen } from './ProductScreen'

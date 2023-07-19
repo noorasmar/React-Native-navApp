@@ -7,15 +7,9 @@ export function WelcomeScreen({ navigation }: any): JSX.Element {
                 Welcome Screen
             </Text>
             <Button
-                title="Fetch Product"
+                title="Products"
                 onPress={() =>
-                    navigation.navigate('HomeScreen')
-                }
-            />
-            <Button
-                title="Mutation"
-                onPress={() =>
-                    navigation.navigate('AddScreen')
+                    navigation.navigate('ProductScreen')
                 }
             />
         </View>
@@ -28,7 +22,7 @@ const styles = StyleSheet.create({
         padding: 16,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'blue',
+        backgroundColor: '#34495e',
         gap: 10
     }
 })

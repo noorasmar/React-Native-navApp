@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Product } from '../interfaces/Product';
-import { Item } from '../components';
+import { StyleSheet, Text, View } from "react-native";
 import { useQuery } from 'react-query';
-import {fetchProduct} from '../api/api'
+import {fetchProduct} from '../../api/api'
+import { Product } from '../../interfaces/Product';
+import { Items } from "../Items";
+import { ScrollView } from "react-native-gesture-handler";
 
-export function HomeScreen(): JSX.Element {
+export function List(): JSX.Element {
     const { data, isLoading, isError, error } = useQuery<Product[] | null>('product', fetchProduct);
 
     if (isLoading || !data) {
@@ -19,10 +19,11 @@ export function HomeScreen(): JSX.Element {
     return (
         <ScrollView style={styles.container}>
             {
-                data.map((el) => {
+                data.reverse().map((el) => {
                     return (
-                        <Item
+                        <Items
                             key={el.id}
+                            id={el.id}
                             title={el.title}
                         />
                     )
@@ -35,7 +36,6 @@ export function HomeScreen(): JSX.Element {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16,
-        backgroundColor: 'red'
+        marginTop: 20,
     }
 })
