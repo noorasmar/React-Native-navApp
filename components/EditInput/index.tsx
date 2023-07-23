@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Modal, StyleSheet, Text, View } from "react-native";
+import { Button, Modal, StyleSheet, Text, View, Keyboard } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { useMutation, useQueryClient } from 'react-query';
 import { Product } from '../../interfaces/Product';
@@ -16,6 +16,7 @@ export function EditInput({ idItem, titleItem, visible, onClose }: { idItem: num
     })
 
     const handleUpdateProduct = () => {
+        Keyboard.dismiss();
         if (productName !== "") {
             const Item: Product = { id: idItem, title: productName, price: 0, category: "" }
             update.mutate(Item);
