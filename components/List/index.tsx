@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import { useQuery } from 'react-query';
-import {fetchProduct} from '../../api/api'
+import { fetchProduct } from '../../api/api'
 import { Product } from '../../interfaces/Product';
 import { Items } from "../Items";
 import { ScrollView } from "react-native-gesture-handler";
 
 export function List(): JSX.Element {
-    const { data, isLoading, isError, error } = useQuery<Product[] | null>('product', fetchProduct);
+    const { data, isLoading, isError, error } = useQuery<Product[] | null>(['product', 5], fetchProduct);
 
     if (isLoading || !data) {
         return <Text>Loading...</Text>;

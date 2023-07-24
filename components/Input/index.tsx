@@ -10,7 +10,7 @@ export function Input(): JSX.Element {
     const queryClient = useQueryClient();
     const add = useMutation(createProduct, {
         onSuccess: () => {
-            queryClient.invalidateQueries('product');
+            queryClient.invalidateQueries(['product',5]);
         },
     })
 
